@@ -4,7 +4,7 @@
 ###
 
 ### Fedora
-set fedora_mirror http://mirror.lstn.net/
+set fedora_mirror http://mirror.lstn.net
 set fedora_base_dir fedora
 
 isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
