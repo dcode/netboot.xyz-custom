@@ -22,8 +22,7 @@ set os_arch ${arch}
 iseq ${os_arch} x86_64 && set os_arch x86_64 ||
 iseq ${os_arch} arm64 && set os_arch aarch64 ||
 
-menu Custom Mirror ${os} - ${os_arch}
-echo mirror ${fedora_mirror}
+menu Custom Mirror ${os} - ${os_arch} - ${fedora_mirror}
 item --gap Latest Releases
 item 42 ${space} ${os} 42
 item 41 ${space} ${os} 41
@@ -50,8 +49,8 @@ goto boottype
 
 
 :boottype
-echo kernel -> ${fedora_mirror}/${dir}/images/pxeboot/vmlinuz
 menu ${os} ${os_arch} boot type
+item --gap kernel -> ${fedora_mirror}/${dir}/images/pxeboot/vmlinuz
 item graphical ${ova} graphical install
 item text ${ova} text install
 item rescue ${ova} rescue
